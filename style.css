@@ -1,0 +1,452 @@
+  /* Base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px 100px;
+    border-radius: 25px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #efefef 100%);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Header image section */
+.header-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 1px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.36);
+    animation: fadeInDown 1s ease-out;
+}
+
+.multicolor-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(to right, rgb(245, 6, 6), rgb(255, 166, 0), rgba(236, 236, 28, 0.952), rgb(2, 129, 2), rgb(2, 2, 249), rgb(75, 0, 130), rgb(238, 130, 238));
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: gradientShift 3s linear infinite;
+}
+
+.skill-logo {
+    width: 15%;
+    height: 15%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+    animation: pulse 2s infinite;
+}
+
+/* Header section */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.2s ease-out;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: rotate 15s linear infinite;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    position: relative;
+    animation: slideInFromTop 1s ease-out;
+}
+
+header p {
+    margin: 1rem 0 0;
+    font-size: 1.3rem;
+    position: relative;
+    animation: slideInFromBottom 1s ease-out;
+}
+
+/* Features section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #a4b6d67a;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content{
+    background-color: #a4b6d67a;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 1rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 15px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.336);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: forwards 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.column:nth-child(1) { animation-delay: 0.2s; }
+.column:nth-child(2) { animation-delay: 0.4s; }
+.column:nth-child(3) { animation-delay: 0.6s; }
+
+.column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #3498db, #2ecc71, #e74c3c);
+}
+
+.column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 135, 207, 0.496);
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.clock-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+    animation: tick 2s infinite;
+}
+
+.time {
+    color: #ff0000;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.column h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #077ff8;
+} 
+
+.column p {
+    color: #000000;
+}
+
+button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 15px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.568);
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* About section */
+.about {
+    text-align: left;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #327eb1 0%, #2c3e50 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: cover;
+}
+
+.about h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    position: relative;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.about p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    position: relative;
+    animation: fadeInRight 1s ease-out;
+    animation-fill-mode: both;
+}
+
+.about p:nth-child(2) { animation-delay: 0.2s; }
+.about p:nth-child(3) { animation-delay: 0.4s; }
+.about p:nth-child(4) { animation-delay: 0.6s; }
+.about p:nth-child(5) { animation-delay: 0.8s; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0 0 15px 15px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2ecc71, #e74c3c);
+}
+
+footer p {
+    position: relative;
+    animation: bounceIn 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tick {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-image {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .multicolor-text {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    
+    .skill-logo {
+        margin: 0 auto;
+    }
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .column {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+}
